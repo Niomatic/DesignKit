@@ -11,7 +11,7 @@ Instructions on how to install them use this link https://www.arduino.cc/en/Guid
 | JSON library | https://github.com/bblanchon/ArduinoJson |
 
 
-### 1. Config WIFI Manager
+### Config WIFI Manager
 * when your ESP starts up for the first time like below pictures, it will ask you to connect to hotspot connection., it sets it up in Station mode and tries to connect to a previously saved Access Point
 * if this is unsuccessful (or no previous network saved) it moves the ESP into Access Point mode and spins up a DNS and WebServer (default ip 192.168.4.1)
 using any wifi enabled device with a browser (computer, phone, tablet) connect to the newly created Access Point
@@ -22,7 +22,7 @@ ESP will try to connect. If successful, it relinquishes control back to your app
 ![alt text](https://github.com/Niomatic/DesignKit/blob/design-stage/Arduino%20Codes/ESP8266-NIO-UltraSonic/Schematic/Guide.png?raw=true)
 
 
-### 2. OTA onfig (over the air programming)
+### OTA onfig (over the air programming)
 After uploading the first code to ESp8266 you can select network port to upload your codes wireless.
 ![alt text](https://github.com/Niomatic/DesignKit/blob/design-stage/Arduino%20Codes/ESP8266-NIO-UltraSonic/Schematic/OTA_port.png?raw=true)
 
@@ -30,13 +30,13 @@ After uploading the first code to ESp8266 you can select network port to upload 
 You can monitor serial port at startup to get the ESP8266 IP.
 ![alt text](https://github.com/Niomatic/DesignKit/blob/design-stage/Arduino%20Codes/ESP8266-NIO-UltraSonic/Schematic/IP.png?raw=true)
 
-### 3. Ultrasonic pins
+### Ultrasonic pins
 ```C
 int trigPin = 14;    //Trig - Ultrasonic sensor connected to NodeMCU GPIO14 i.e.D5
 int echoPin = 12;    //Echo - Ultrasonic sensor connected to NodeMCU GPIO12 i.e.D6
 ```
 
-### 4. Schematic
+### Schematic
 Tested with UltraSonic HC-SR04 and NODEMCU ESP8266 based Board.
 ![alt text](https://github.com/Niomatic/DesignKit/blob/design-stage/Arduino%20Codes/ESP8266-NIO-UltraSonic/Schematic/Schematic.png?raw=true)
 
