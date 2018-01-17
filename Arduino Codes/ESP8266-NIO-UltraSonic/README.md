@@ -3,11 +3,13 @@ Runnig Ultrasonic sensor with ESP8266 board, sending distance data to Niomatic a
 
 ### Arduino needed libraries
 Instructions on how to install them use this link https://www.arduino.cc/en/Guide/Libraries.
+
 | Library | Download Link |
 | ------ | ------ |
 | ESP8266 | https://github.com/esp8266/Arduino |
 | WiFi Connection manager | https://github.com/tzapu/WiFiManager |
 | JSON library | https://github.com/bblanchon/ArduinoJson |
+
 
 ### 1. Config WIFI Manager
 * when your ESP starts up for the first time like below pictures, it will ask you to connect to hotspot connection., it sets it up in Station mode and tries to connect to a previously saved Access Point
