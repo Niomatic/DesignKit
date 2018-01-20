@@ -1,5 +1,5 @@
-# ESP8266 MQ-5 Gas sensor UltraSonic
-Runnig MQ-5 gas sensor (HYDROGEN,LPG,METHANE,CARBON_MONOXIDE,ALCOHOL) Modules with ESP8266 board, sending distance data to Niomatic android application trough Json over TCP/UDP
+# ESP8266 MQ-5 Gas sensor
+Runnig MQ-5 gas sensor (HYDROGEN,LPG,METHANE,CARBON_MONOXIDE,ALCOHOL) Modules with ESP8266 board, sending gas density data to Niomatic android application trough Json over TCP/UDP
 
 ### Arduino needed libraries
 Instructions on how to install them use this link https://www.arduino.cc/en/Guide/Libraries.
@@ -19,7 +19,7 @@ because of the Captive Portal and the DNS server you will either get a 'Join to 
 choose one of the access points scanned, enter password, click save
 ESP will try to connect. If successful, it relinquishes control back to your app. If not, reconnect to AP and reconfigure.
 
-![alt text](https://github.com/Niomatic/DesignKit/blob/design-stage/Arduino%20Codes/ESP8266-NIO-UltraSonic/Schematic/Guide.png?raw=true)
+![alt text](https://github.com/Niomatic/DesignKit/blob/design-stage/Arduino%20Codes/ESP8266-NIO-MQ5/Schematic/Schematic.png?raw=true)
 
 
 ### OTA onfig (over the air programming)
@@ -50,7 +50,7 @@ Sending Json request from Niomatic app:
 }
 ```
 
-ESP8266 Response with gas (ppm) data:
+ESP8266 Response with gas density (ppm) data:
 ```javascript
 {
   "identify": "Gas-Sensor",
