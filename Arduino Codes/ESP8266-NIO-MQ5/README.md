@@ -1,4 +1,4 @@
-# ESP8266 MQ-5 Gas sensor
+# ESP8266 MQ-5 gas sensor
 Runnig MQ-5 gas sensor (HYDROGEN,LPG,METHANE,CARBON_MONOXIDE,ALCOHOL) Modules with ESP8266 board, sending gas density data to Niomatic android application trough Json over TCP/UDP
 
 ### Arduino needed libraries
@@ -19,8 +19,7 @@ because of the Captive Portal and the DNS server you will either get a 'Join to 
 choose one of the access points scanned, enter password, click save
 ESP will try to connect. If successful, it relinquishes control back to your app. If not, reconnect to AP and reconfigure.
 
-![alt text](https://github.com/Niomatic/DesignKit/blob/design-stage/Arduino%20Codes/ESP8266-NIO-MQ5/Schematic/Schematic.png?raw=true)
-
+![alt text](https://github.com/Niomatic/DesignKit/raw/design-stage/Arduino%20Codes/ESP8266-NIO-UltraSonic/Schematic/Guide.png?raw=true)
 
 ### OTA onfig (over the air programming)
 After uploading the first code to ESp8266 you can select network port to upload your codes wireless.
@@ -33,7 +32,7 @@ You can monitor serial port at startup to get the ESP8266 IP.
 
 ### Schematic
 Tested with MQ-5 module and NODEMCU ESP8266 based Board.
-![alt text](https://github.com/Niomatic/DesignKit/blob/design-stage/Arduino%20Codes/ESP8266-NIO-UltraSonic/Schematic/Schematic.png?raw=true)
+![alt text](https://github.com/Niomatic/DesignKit/blob/design-stage/Arduino%20Codes/ESP8266-NIO-MQ5/Schematic/Schematic.png?raw=true)
 
 ### Code 
 
