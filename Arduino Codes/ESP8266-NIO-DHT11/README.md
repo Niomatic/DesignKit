@@ -39,7 +39,6 @@ You can monitor serial port at startup to get the ESP8266 IP.
 ```
 
 ### Schematic
-Tested with DHT11 and NODEMCU ESP8266 based Board.
 ![alt text](https://github.com/Niomatic/DesignKit/raw/design-stage/Arduino%20Codes/ESP8266-NIO-DHT11/Schemtaic/Schematic.jpg?raw=true)
 
 ### Code 
