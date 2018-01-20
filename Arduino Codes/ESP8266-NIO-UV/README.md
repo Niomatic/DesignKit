@@ -1,5 +1,8 @@
 # ESP8266 Niomatic UV sensors
-Runnig UV sensor with ESP8266 board, sending signals to Niomatic android application trough Json over TCP/UDP
+Extend your light-sensing spectrum with GUVA-S12SD analog UV sensor module. It uses a UV photodiode, which can detect the 240-370nm range of light (which covers UVB and most of UVA spectrum). The signal level from the photodiode is very small, in the nano-ampere level, so we tossed on an opamp to amplify the signal to a more manageable volt-level.
+This sensor is much simpler than our Si1145 breakout, it only does one thing and gives an analog voltage output instead of requiring a complicated I2C setup procedure. This makes it better for simple projects. It also has a 'true' UV sensor instead of a calibrated light-sensor. To use, power the sensor and op-amp by connecting V+ to 2.7-5.5VDC and GND to power ground. Then read the analog signal from the OUT pin. The output voltage is: Vo = 4.3 * Diode-Current-in-uA. So if the photocurrent is 1uA (9 mW/cm^2), the output voltage is 4.3V. You can also convert the voltage to UV Index by dividing the output voltage by 0.1V. So if the output voltage is 0.5V, the UV Index is about 5.
+
+With this code you can run UV sensor with ESP8266 board, sending signals to Niomatic android application trough Json over TCP/UDP
 
 ### Arduino needed libraries
 Instructions on how to install them use this link https://www.arduino.cc/en/Guide/Libraries.
