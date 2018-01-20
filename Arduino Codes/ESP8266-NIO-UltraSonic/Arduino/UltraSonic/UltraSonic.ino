@@ -53,6 +53,7 @@
 
 int trigPin = 14;    //Trig - Ultrasonic sensor connected to NodeMCU GPIO14 i.e.D5
 int echoPin = 12;    //Echo - Ultrasonic sensor connected to NodeMCU GPIO12 i.e.D6
+
 float dist_cm = 0.0;   // Values read from Ultrasonic sensor
 
 char UDP_packetBuffer[UDP_TX_PACKET_MAX_SIZE]; //buffer to hold incoming packet
