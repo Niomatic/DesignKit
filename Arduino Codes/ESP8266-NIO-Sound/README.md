@@ -28,7 +28,7 @@ After uploading the first code to ESp8266 you can select network port to upload 
 
 #### ESP8266 IP
 You can monitor serial port at startup to get the ESP8266 IP.
-![alt text](https://github.com/Niomatic/DesignKit/blob/design-stage/Arduino%20Codes/ESP8266-NIO-UltraSonic/Schematic/IP.png?raw=true)
+![alt text](https://github.com/Niomatic/DesignKit/blob/design-stage/Arduino%20Codes/ESP8266-NIO-Sound/Schemtaic/Schematic.png?raw=true)
 
 ### Code 
 
