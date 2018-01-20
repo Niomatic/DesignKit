@@ -1,5 +1,5 @@
-# ESP8266 Niomatic DHT temperature/humidity sensors
-Runnig DHT sensors with ESP8266 board, sending temperature/humidity sensors data to Niomatic android application trough Json over TCP/UDP
+# ESP8266 Niomatic Sound sensors
+Runnig Sound sensor with ESP8266 board, sending audio signals to Niomatic android application trough Json over TCP/UDP
 
 ### Arduino needed libraries
 Instructions on how to install them use this link https://www.arduino.cc/en/Guide/Libraries.
@@ -9,8 +9,6 @@ Instructions on how to install them use this link https://www.arduino.cc/en/Guid
 | ESP8266 | https://github.com/esp8266/Arduino |
 | WiFi Connection manager | https://github.com/tzapu/WiFiManager |
 | JSON library | https://github.com/bblanchon/ArduinoJson |
-|  Adafruit Sensor Driver | https://github.com/adafruit/Adafruit_Sensor |
-| DHT sensors | https://github.com/adafruit/DHT-sensor-library |
 
 
 ### Config WIFI Manager
@@ -32,16 +30,6 @@ After uploading the first code to ESp8266 you can select network port to upload 
 You can monitor serial port at startup to get the ESP8266 IP.
 ![alt text](https://github.com/Niomatic/DesignKit/blob/design-stage/Arduino%20Codes/ESP8266-NIO-UltraSonic/Schematic/IP.png?raw=true)
 
-### DHT Config
-```C
-#define DHTPIN 2 
-#define DHTTYPE DHT11   //Can replaced by: DHT11,DHT22,DHT21,AM2301
-```
-
-### Schematic
-Tested with DHT11 and NODEMCU ESP8266 based Board.
-![alt text](https://github.com/Niomatic/DesignKit/raw/design-stage/Arduino%20Codes/ESP8266-NIO-DHT11/Schemtaic/Schematic.jpg?raw=true)
-
 ### Code 
 
 Command send from NIO to ESP in the JSON structure via TCP or UDP, get back json response and show to Niomatic app.
@@ -49,7 +37,7 @@ Command send from NIO to ESP in the JSON structure via TCP or UDP, get back json
 Sending Json request from Niomatic app:
 ```javascript
 {
-  "ask": "Temperature-Humidity-Sensor",
+  "ask": "Sound-Sensor",
   "port": 50000,
   "continue":t ,
   "interval": 10, 
@@ -57,12 +45,11 @@ Sending Json request from Niomatic app:
 }
 ```
 
-ESP8266 Response with UltraSonic distance(CM unit) data:
+ESP8266 Response with audio signal data:
 ```javascript
 {
-  "identify": "Temperature-Humidity-Sensor",
-  "Value-temp": "25.6",
-  "Value-hum": 40
+  "identify": "Sound-Sensor",
+  "Value": "..."
 }
 ```
 
