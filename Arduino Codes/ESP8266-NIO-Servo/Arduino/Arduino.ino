@@ -73,7 +73,7 @@ void servoMove(uint8_t pos) {
   if (pos > 180) pos = 180;
   if (servoSpeed < 255) {
     int p = servoPos();
-    Serial.printf("moveing servo from %d to %d speed %d\n", p, pos, servoSpeed);
+    Serial.printf("moving servo from %d to %d speed %d\n", p, pos, servoSpeed);
     if (p < pos) {
       for (; p < pos; p += 1) {
         myservo.write(p);

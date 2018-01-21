@@ -134,11 +134,7 @@ void Json_parse(String data_in) {
 
   if (j_ask_s == "Set_RGB")
   {
-    Serial.println(j_index);
-    Serial.println(j_red);
-    Serial.println(j_green);
-    Serial.println(j_blue);
-
+    Serial.printf("Set RGB LED index num: %d to color Red: %d Green: %d Blue: %d", j_index, j_red, j_green, j_blue);
     strip.SetPixelColor(j_index, RgbColor(j_red, j_green, j_blue));
     strip.Show();
   }
