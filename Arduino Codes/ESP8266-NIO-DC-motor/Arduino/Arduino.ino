@@ -37,10 +37,10 @@
 #include <ArduinoJson.h>
 
 
-// Motor 1 control pins
+/**** Motor 1 control pins****/
 int IN1 = D5;
 int IN2 = D6;
-// Motor 2 control pins
+/**** Motor 2 control pins****/
 int IN3 = D7;
 int IN4 = D8;
 
