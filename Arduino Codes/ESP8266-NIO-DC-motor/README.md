@@ -30,12 +30,13 @@ After uploading the first code to ESp8266 you can select network port to upload 
 You can monitor serial port at startup to get the ESP8266 IP.
 ![alt text](https://github.com/Niomatic/DesignKit/blob/design-stage/Arduino%20Codes/ESP8266-NIO-UltraSonic/Schematic/IP.png?raw=true)
 
-### WS2812 LED strip Config
-```C
-const uint16_t PixelCount = 10; // this example assumes 10 pixels, making it smaller than 4 will cause a failure
-const uint8_t PixelPin = 2;  // make sure to set this to the correct pin, ignored for Esp8266
-```
 
+/**** Motor 1 control pins****/
+int IN1 = D5;
+int IN2 = D6;
+/**** Motor 2 control pins****/
+int IN3 = D7;
+int IN4 = D8;
 
 ### Schematic
 ![alt text](https://github.com/Niomatic/DesignKit/blob/design-stage/Arduino%20Codes/ESP8266-NIO-DC-motor/Schemtaic/Schematic.png?raw=true)
