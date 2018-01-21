@@ -1,5 +1,5 @@
 /*****************************************************************************************
-   Name          : Set Servo motor angle using Niomatic App
+   Name          : Set RGB LED colors using Niomatic App
    Author        : niomatic open source team
    Notice        : © Copyright 2018 Nio group –
                  : Mobile App Design and Development Company. All Rights Reserved
@@ -8,34 +8,33 @@
    Github        :
    Date          : 15/1/18 10:00 AM
    Version       : 1.6
-   Description   : Set Servo motor angle with Json over TCP/UDP
+   Description   : Set RGB LED colors with Json over TCP/UDP
 
 
   /*****************************************************************************************
                          List of libraries or plugins required                           *
 ******************************************************************************************
-  ESP8266 Arduino platform stable release  https://github.com/esp8266/Arduino
+  ESP8266 Arduino platform stable release   https://github.com/esp8266/Arduino
    WiFi Connection manager with web config  https://github.com/tzapu/WiFiManager
    JSON library for Arduino and IoT         https://github.com/bblanchon/ArduinoJson
-
+    Arduino NEO Pixel                       https://github.com/Makuna/NeoPixelBus
 
 
   /*****************************************************************************************
                                List of hardware required                                 *
 ******************************************************************************************
    Any ESP8266 development kit
-   Servo motor 
+   WS2812 Strip LED
 
 
   /*****************************************************************************************
                                    Hardware description                                  *
 ******************************************************************************************
   Wiring :
-  Servo motor signal --> ESP8266 D1 (GPIO5)
+  ws2812 Din signal pin --> ESP8266 D4 (GPIO2)
 */
 
 
-#include <Servo.h>
 #include <ESP8266WiFi.h>
 #include <DNSServer.h>
 #include <ESP8266WebServer.h>
@@ -43,9 +42,14 @@
 #include <WiFiUdp.h>
 #include "ArduinoOTA.h"
 #include <ArduinoJson.h>
+#include <NeoPixelBus.h>
 
 
-#define servo_pin  5
+
+
+const uint16_t PixelCount = 10; // this example assumes 10 pixels, making it smaller than 4 will cause a failure
+const uint8_t PixelPin = 2;  // make sure to set this to the correct pin, ignored for Esp8266
+
 char UDP_packetBuffer[UDP_TX_PACKET_MAX_SIZE]; //buffer to hold incoming packet
 const int TCP_port = 48000;
 const int UDP_port = 48000;
@@ -54,41 +58,16 @@ const int UDP_port = 48000;
 WiFiUDP Udp;
 WiFiServer server(TCP_port);
 WiFiClient serverClients[MAX_TCP_CLIENTS];
-Servo myservo;
-uint8_t servoSpeed=254;               // 255=fastest, else 255-X msec delay per single degree 
+
+NeoPixelBus<NeoGrbFeature, Neo800KbpsMethod> strip(PixelCount, PixelPin);
 
 //Global variables
 String j_ask_s;
 const char* j_ask;
-int j_angle;
-
-/**
-  Servo move functions
-*/
-uint8_t servoPos() {
-  return myservo.read();  
-}
-
-void servoMove(uint8_t pos) {
-  if (pos > 180) pos = 180;
-  if (servoSpeed < 255) {
-    int p = servoPos();
-    Serial.printf("moveing servo from %d to %d speed %d\n", p, pos, servoSpeed);
-    if (p < pos) {
-      for (; p < pos; p += 1) {
-        myservo.write(p);
-        delay(255-servoSpeed);
-      }
-    } else {
-      for (; p > pos; p -= 1) {
-        myservo.write(p);
-        delay(255-servoSpeed);      
-      }
-    }
-  }
-  Serial.printf("moved servo to %d\n", pos);
-  myservo.write(pos);
-}
+int j_index;
+int j_red;
+int j_green;
+int j_blue;
 
 
 
@@ -100,7 +79,7 @@ void OTA_Config() {
   wifiManager.autoConnect("Niomatic-Config");
   ArduinoOTA.setHostname("Niomatic Sensor Kit"); //Hostname
   //Customize OTA & Wifi manger
-  
+
   /*
     wifiManager.resetSettings(); //Uncomment this & whenever want to reset saved WIFI settings
     wifiManager.setAPConfig(IPAddress(10,0,1,1), IPAddress(10,0,1,1), IPAddress(255,255,255,0));  //set custom ip for portal
@@ -134,7 +113,7 @@ void OTA_Config() {
   ArduinoOTA.begin();
 }
 
-
+RgbColor black(0);
 /**
    Json parser
    data_in: String input from UDP or TCP
@@ -147,11 +126,21 @@ void Json_parse(String data_in) {
     return;
   }
   j_ask = root["ask"];
-  j_angle = root["angle"];
   j_ask_s = j_ask;
-  if (j_ask_s == "Set_Servo")
+  j_index = root["Index"];
+  j_red = root["Red"];
+  j_green = root["Green"];
+  j_blue = root["Blue"];
+
+  if (j_ask_s == "Set_RGB")
   {
-    servoMove(j_angle);
+    Serial.println(j_index);
+    Serial.println(j_red);
+    Serial.println(j_green);
+    Serial.println(j_blue);
+
+    strip.SetPixelColor(j_index, RgbColor(j_red, j_green, j_blue));
+    strip.Show();
   }
 }
 
@@ -168,8 +157,10 @@ void setup() {
   server.begin();
   server.setNoDelay(true);
 
-  myservo.attach(servo_pin);
- }
+  strip.Begin();
+  strip.Show();
+
+}
 
 
 /**
