@@ -36,7 +36,7 @@ You can monitor serial port at startup to get the ESP8266 IP.
 The problem with using an analog joystick with the ESP8266 is that ESP8266 only has 1 analog input. 
 One way is Using a multiplexer but if you don't want to add another IC, you can use the analog input along with 2 GPIO pins and a couple of resistors to expand the ESP8266 analog input to 2 inputs.
 
-![alt text](https://github.com/Niomatic/DesignKit/blob/design-stage/Arduino%20Codes/ESP8266-NIO-Button/Schemtaic/Schematic.png?raw=true)
+![alt text](https://github.com/Niomatic/DesignKit/blob/design-stage/Arduino%20Codes/ESP8266-NIO-Joystick/Schemtaic/Schematic.png?raw=true)
 
 ### Code 
 
@@ -45,8 +45,8 @@ ESP8266 Send data:
 ```javascript
 {
   "identify": "Joysick_Read",
-  "Value-x": "...",
-  "Value-y": "..."
+  "Value-X": "...",
+  "Value-Y": "..."
 }
 ```
 
