@@ -9,6 +9,7 @@ Instructions on how to install them use this link https://www.arduino.cc/en/Guid
 | ESP8266 | https://github.com/esp8266/Arduino |
 | WiFi Connection manager | https://github.com/tzapu/WiFiManager |
 | JSON library | https://github.com/bblanchon/ArduinoJson |
+| SSD1306 OLED library | https://github.com/squix78/esp8266-oled-ssd1306 |
 
 
 ### Config WIFI Manager
