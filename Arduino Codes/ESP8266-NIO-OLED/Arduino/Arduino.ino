@@ -179,6 +179,7 @@ void Json_parse(String data_in) {
     {
       Serial.println("Mode : Clear display");
       display.clear();
+      display.display();
     }
   }
 }

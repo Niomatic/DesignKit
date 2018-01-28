@@ -41,7 +41,7 @@ You can monitor serial port at startup to get the ESP8266 IP.
 ### Schematic
 ![alt text](https://github.com/Niomatic/DesignKit/blob/design-stage/Arduino%20Codes/ESP8266-NIO-OLED/Schemtaic/Schematic.png?raw=true)
 
-### Code 
+# Code 
 Command send from NIO to ESP in the JSON structure via TCP or UDP, get back json response and show to Niomatic app.
 Sending Json request from Niomatic app:
 
@@ -57,11 +57,11 @@ Sending Json request from Niomatic app:
 }
 ```
 
-# Draw Rectangular
+# Draw Text
 ```javascript
 {
   "ask": "Set_OLED",
-  "mode": "draw_rect",
+  "mode": "draw_text",
   "x": "10",
   "y": "10",
   "text": "Hello",
@@ -69,7 +69,7 @@ Sending Json request from Niomatic app:
 }
 ```
 
-# Draw Text
+# Draw Rectangular
 ```javascript
 {
   "ask": "Set_OLED",
