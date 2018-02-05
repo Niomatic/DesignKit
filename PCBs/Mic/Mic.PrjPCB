@@ -71,6 +71,10 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=RAAOQIEO
 
+[GeneratedDocument1]
+DocumentPath=Project Outputs for Mic\Design Rule Check - Mic.html
+DItemRevisionGUID=
+
 [Configuration1]
 Name=Sources
 ParameterCount=0
