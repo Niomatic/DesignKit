@@ -52,7 +52,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=HEYWGVQM
+DocumentUniqueId=WLIMQIIA
 
 [Document2]
 DocumentPath=Moisture.SchDoc
@@ -70,10 +70,6 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=RAAOQIEO
-
-[GeneratedDocument1]
-DocumentPath=Project Outputs for Moisture\Design Rule Check - Moisture.html
-DItemRevisionGUID=
 
 [Configuration1]
 Name=Sources

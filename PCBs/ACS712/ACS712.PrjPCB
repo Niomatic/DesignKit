@@ -71,6 +71,10 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=RAAOQIEO
 
+[GeneratedDocument1]
+DocumentPath=Project Outputs for ACS712\Design Rule Check - ACS712.html
+DItemRevisionGUID=
+
 [Configuration1]
 Name=Sources
 ParameterCount=0
