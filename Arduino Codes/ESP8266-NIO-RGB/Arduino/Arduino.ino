@@ -17,7 +17,7 @@
   ESP8266 Arduino platform stable release   https://github.com/esp8266/Arduino
    WiFi Connection manager with web config  https://github.com/tzapu/WiFiManager
    JSON library for Arduino and IoT         https://github.com/bblanchon/ArduinoJson
-    Arduino NEO Pixel                       https://github.com/Makuna/NeoPixelBus
+    Adafruit NEO Pixel                       https://github.com/adafruit/Adafruit_NeoPixel
 
 
   /*****************************************************************************************
@@ -42,13 +42,13 @@
 #include <WiFiUdp.h>
 #include "ArduinoOTA.h"
 #include <ArduinoJson.h>
-#include <NeoPixelBus.h>
+#include <Adafruit_NeoPixel.h>
 
 
 
 
-const uint16_t PixelCount = 10; // this example assumes 10 pixels, making it smaller than 4 will cause a failure
-const uint8_t PixelPin = 2;  // make sure to set this to the correct pin, ignored for Esp8266
+#define NUMPIXELS      18     // How many RGB LED are attached to the Arduino
+#define PIN            D5     // WS2812 Module pin
 
 char UDP_packetBuffer[UDP_TX_PACKET_MAX_SIZE]; //buffer to hold incoming packet
 const int TCP_port = 48000;
@@ -59,7 +59,7 @@ WiFiUDP Udp;
 WiFiServer server(TCP_port);
 WiFiClient serverClients[MAX_TCP_CLIENTS];
 
-NeoPixelBus<NeoGrbFeature, Neo800KbpsMethod> strip(PixelCount, PixelPin);
+Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
 //Global variables
 String j_ask_s;
@@ -113,7 +113,7 @@ void OTA_Config() {
   ArduinoOTA.begin();
 }
 
-RgbColor black(0);
+
 /**
    Json parser
    data_in: String input from UDP or TCP
@@ -134,9 +134,11 @@ void Json_parse(String data_in) {
 
   if (j_ask_s == "Set_RGB")
   {
-    Serial.printf("Set RGB LED index num: %d to color Red: %d Green: %d Blue: %d", j_index, j_red, j_green, j_blue);
-    strip.SetPixelColor(j_index, RgbColor(j_red, j_green, j_blue));
-    strip.Show();
+    Serial.printf("Set RGB LED index num: %d to color Red: %d Green: %d Blue: %d \n", j_index, j_red, j_green, j_blue);
+    pixels.setPixelColor(j_index, pixels.Color(j_red, j_green, j_blue));
+   // pixels.SetPixelColor(j_index, RgbColor(j_red, j_green, j_blue));
+    pixels.show();
+    delay(1);
   }
 }
 
@@ -153,9 +155,7 @@ void setup() {
   server.begin();
   server.setNoDelay(true);
 
-  strip.Begin();
-  strip.Show();
-
+ pixels.begin(); // This initializes the NeoPixel library.
 }
 
 
@@ -202,8 +202,6 @@ void loop() {
           read_size++;
         }
         Json_parse(tcp_read_buffer);
-
-
         read_size = 0;
       }
     }

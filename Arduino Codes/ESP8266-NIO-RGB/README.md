@@ -9,7 +9,7 @@ Instructions on how to install them use this link https://www.arduino.cc/en/Guid
 | ESP8266 | https://github.com/esp8266/Arduino |
 | WiFi Connection manager | https://github.com/tzapu/WiFiManager |
 | JSON library | https://github.com/bblanchon/ArduinoJson |
-| Arduino NEO Pixel | https://github.com/Makuna/NeoPixelBus |
+| Adafruit NEO Pixel | https://github.com/adafruit/Adafruit_NeoPixel |
 
 
 ### Config WIFI Manager
@@ -33,8 +33,8 @@ You can monitor serial port at startup to get the ESP8266 IP.
 
 ### WS2812 LED strip Config
 ```C
-const uint16_t PixelCount = 10; // this example assumes 10 pixels, making it smaller than 4 will cause a failure
-const uint8_t PixelPin = 2;  // make sure to set this to the correct pin, ignored for Esp8266
+#define NUMPIXELS      18     // How many RGB LED are attached to the Arduino
+#define PIN            D5     // WS2812 Module pin
 ```
 
 
