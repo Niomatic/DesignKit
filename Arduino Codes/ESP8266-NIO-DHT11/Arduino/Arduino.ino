@@ -47,7 +47,7 @@
 #include <ArduinoJson.h>
 #include "DHT.h"
 
-#define DHTPIN 2        //What digital pin we're connected to
+#define DHTPIN D1        //What digital pin we're connected to
 #define DHTTYPE DHT11   //Can replaced by: DHT11,DHT22,DHT21,AM2301
 char UDP_packetBuffer[UDP_TX_PACKET_MAX_SIZE]; //buffer to hold incoming packet
 const int TCP_port = 48000;
