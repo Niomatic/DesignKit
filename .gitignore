@@ -15,3 +15,19 @@
 
 # Visio autosave temporary files
 *.~vsd*
+
+# Altium Designer
+project_file/History/*
+project_file/__Previews/*
+project_file/Project Logs for project_file/*
+History
+__Previews
+*.PrjPCBStructure
+*.PrjPcbStructure
+
+*.SchDocPreview
+*.PcbDocPreview
+Project Outputs for *
+Project Logs for *
+
+
