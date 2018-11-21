@@ -16,6 +16,18 @@ Providing opportunities in the electronic and computer field at the lowest cost,
 | DHT temperature/humidity sensors | https://github.com/Niomatic/DesignKit/tree/master/Arduino%20Codes/ESP8266-NIO-DHT11 |
 | Read joysick status | https://github.com/Niomatic/DesignKit/tree/master/Arduino%20Codes/ESP8266-NIO-Joystick |
 | GL-xxx photocell sensor(in lux and footcandles) | https://github.com/Niomatic/DesignKit/tree/master/Arduino%20Codes/ESP8266-NIO-LDR |
+| MQ-5 gas sensor | https://github.com/Niomatic/DesignKit/tree/master/Arduino%20Codes/ESP8266-NIO-MQ5 |
+| Moisture sensors | https://github.com/Niomatic/DesignKit/tree/master/Arduino%20Codes/ESP8266-NIO-Moisture |
+| OLED display | https://github.com/Niomatic/DesignKit/tree/master/Arduino%20Codes/ESP8266-NIO-OLED |
+| RGB LED colors | https://github.com/Niomatic/DesignKit/tree/master/Arduino%20Codes/ESP8266-NIO-RGB |
+| Servo motor | https://github.com/Niomatic/DesignKit/tree/master/Arduino%20Codes/ESP8266-NIO-Servo |
+| Sound sensors | https://github.com/Niomatic/DesignKit/tree/master/Arduino%20Codes/ESP8266-NIO-Sound |
+| Stepper motor | https://github.com/Niomatic/DesignKit/tree/master/Arduino%20Codes/ESP8266-NIO-Stepper |
+| UV sensor | https://github.com/Niomatic/DesignKit/tree/master/Arduino%20Codes/ESP8266-NIO-UV |
+| UltraSonic | https://github.com/Niomatic/DesignKit/tree/master/Arduino%20Codes/ESP8266-NIO-UltraSonic |
+| WS2812 RGB LED Strip colors | https://github.com/Niomatic/DesignKit/tree/master/Arduino%20Codes/ESP8266-NIO-WS2812-RGB |
+| HX711 | https://github.com/Niomatic/DesignKit/tree/master/Arduino%20Codes/HX711 |
+| MAX44009 | https://github.com/Niomatic/DesignKit/tree/master/Arduino%20Codes/MAX44009 |
 
 ## Applet
 
