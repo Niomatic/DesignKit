@@ -1,9 +1,9 @@
 # DesignKit, Niomatic IOT hardware solution
 Niomatic, meaning of "n Input Output self-perform" is an Android based platform for a visual programming language from NIO Group. This platform performs to execute on low power consumption and limited resource hardware applications.
 
-###Niomatic Democratic language
+###Niomatic Democratic language###
 The platform is completely free and unrestricted for all public, educational, and non-commercial purposes. Visual programming application, Nio platform, can be often used in easy teaching coding and computer science. The graphical approach also enables zero-code to build enterprise-grade applications by dragging and dropping blocks that representing codes and functionality.
-###Prospect  
+###Prospect### 
 Providing opportunities in the electronic and computer field at the lowest cost, fastest time and eliminating repetitive tasks in the way of creating value.
 
 | Project | Github Link |
