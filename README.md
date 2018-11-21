@@ -38,3 +38,5 @@ The applets are small executable files that have the same functionality as the a
 The applets are designed and developed by developers and businesses. Designing these applets does not require specialized programming knowledge, they are graphically arranged and put together blocks and connect them.
 ![Applet VS Application](https://raw.githubusercontent.com/Niomatic/DesignKit/master/Images/appletvsapplication.png?raw=true)
 
+## Donate
+Paypal: https://www.paypal.com/pools/c/89NSY4k2vZ
