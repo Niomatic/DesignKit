@@ -19,4 +19,5 @@ Providing opportunities in the electronic and computer field at the lowest cost,
 Create an Applet platform that provides full-stack application solution based on new visual programming concept. The platform will have a widespread use of the Internet of Things. in the other words, we're working on creating the new generation of apps - the applet.
 The applets are small executable files that have the same functionality as the app but have a much smaller volume.
 The applets are designed and developed by developers and businesses. Designing these applets does not require specialized programming knowledge, they are graphically arranged and put together blocks and connect them.
-![alt text](DesignKit/Images/appletvsapplication.png?raw=true)
+![Applet VS Application](https://github.com/Niomatic/DesignKit/Images/appletvsapplication.png?raw=true)
+
