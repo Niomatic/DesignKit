@@ -1,3 +1,6 @@
+## This repository is deprecated, for new changes go to [new library page.](https://github.com/Niomatic/Niomatic-NitoKIt-Arduino-Library)
+
+
 # DesignKit, Niomatic IOT hardware solution
 Niomatic, meaning of "n Input Output self-perform" is an Android based platform for a visual programming language from NIO Group. This platform performs to execute on low power consumption and limited resource hardware applications.
 
